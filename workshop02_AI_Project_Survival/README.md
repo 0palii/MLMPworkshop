@@ -6,11 +6,11 @@ Inference task: Object detection
 
 **Repo map**
 
-Environment: pyproject.toml & requirements.txt
+Environment: pyproject.toml
 
-Entry point: detect.py
+Entry point: amg.py
 
-Model: The detect.py automatically downloads models from the latest YOLOv5 release 
+Model: sam_vit_h_4b8939.pth
 
 Input: /home/s5908294/workshop02_project/segment-anything/assets/alien.jpg
 Output: /home/s5908294/workshop02_project/segment-anything/output/0-19.png
@@ -20,8 +20,6 @@ Output: /home/s5908294/workshop02_project/segment-anything/output/0-19.png
 git clone https://github.com/facebookresearch/segment-anything.git
 cd /home/s5908294/workshop02_project/segment-anything
 uv python install 3.13.14
-uv venv --python 3.13.14
-source .venv/bin/activate
 uv pip install torch torchvision
 uv pip install opencv-python pycocotools matplotlib onnxruntime onnx jupyter
 uv pip install -e .
@@ -38,11 +36,11 @@ python scripts/amg.py \
 
 **One real failure**
 
-Category: FileNotFoundError
+Category: python version and FileNotFoundError
 
-Root cause: My checkpoint and the sample picture are not placed in the corresponding directory, so i have to make a directory called "chekpoints" and put the picture in the directory called "assets".
+Root cause: First of all my python was 3.9.25, but the project needs it to be above 3.13, so i need to download the corresponding version. Second, my checkpoint and the sample picture are not placed in the right directory, so i have to make a directory called "chekpoints" and put the picture in the directory called "assets".
 
-Minimal fix: put the checkpoint and the picture in the right place.
+Minimal fix: download the corresponding python version and put the checkpoint and the picture in the right place.
 
 **AI agent check**
 
@@ -50,4 +48,4 @@ Which AI coding agent did you use?: copilot
 
 What did it change?: wrote me a test file that did not really worked out.
 
-How did you verify the change?: I asked it to do this and then discovered that i did not really need this
+How did you verify the change?: I asked it to do this and then discovered that i did not really need this, because there is a sample of amg.py.
