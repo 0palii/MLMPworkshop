@@ -12,36 +12,39 @@ Entry point: amg.py
 
 Model: sam_vit_h_4b8939.pth
 
-Input: /home/s5908294/workshop02_project/segment-anything/assets/alien.jpg
-Output: /home/s5908294/workshop02_project/segment-anything/output/0-19.png
+Input: /home/<your location>/segment-anything/assets/<your input>
+Output: /home/<your location>/segment-anything/<your output>
 
 **Environment setup**
 ```text
 git clone https://github.com/facebookresearch/segment-anything.git
-cd /home/s5908294/workshop02_project/segment-anything
+cd /<your location>/segment-anything
 uv venv --python 3.13.14
 source .venv/bin/activate
 uv pip install torch torchvision
 uv pip install opencv-python pycocotools matplotlib onnxruntime onnx jupyter
 uv pip install -e .
+mkdir -p checkpoints
+# place <your model>.pth in checkpoints/
+# ensure <your input> exists and is readable
 ```
 
 **Inference** 
 ```text
 python scripts/amg.py \
-  --checkpoint /home/s5908294/workshop02_project/segment-anything/checkpoints/sam_vit_h_4b8939.pth \
+  --checkpoint /home/<your location>/segment-anything/checkpoints/sam_vit_h_4b8939.pth \
   --model-type vit_h \
-  --input /home/s5908294/workshop02_project/segment-anything/assets/alien.jpg \
-  --output /home/s5908294/workshop02_project/segment-anything/output
+  --input /home/<your location>/segment-anything/assets/alien.jpg \
+  --output /home/s<your location>/segment-anything/output
 ```
 
 **One real failure**
 
-Category: python version and FileNotFoundError
+Category: FileNotFoundError
 
-Root cause: First of all my python was 3.9.25, but the project needs it to be above 3.13, so i need to download the corresponding version. Second, my checkpoint and the sample picture are not placed in the right directory, so i have to make a directory called "chekpoints" and put the picture in the directory called "assets".
+Root cause: My checkpoint and the sample picture are not placed in the right directory, so i have to make a directory called "chekpoints" and put the picture in the directory called "assets".
 
-Minimal fix: download the corresponding python version and put the checkpoint and the picture in the right place.
+Minimal fix: put the checkpoint and the picture in the right place.
 
 **AI agent check**
 
