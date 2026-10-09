@@ -19,7 +19,8 @@ Output: /home/s5908294/workshop02_project/segment-anything/output/0-19.png
 ```text
 git clone https://github.com/facebookresearch/segment-anything.git
 cd /home/s5908294/workshop02_project/segment-anything
-uv python install 3.13.14
+uv venv --python 3.13.14
+source .venv/bin/activate
 uv pip install torch torchvision
 uv pip install opencv-python pycocotools matplotlib onnxruntime onnx jupyter
 uv pip install -e .
