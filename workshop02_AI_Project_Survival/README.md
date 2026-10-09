@@ -35,7 +35,7 @@ python scripts/amg.py \
   --checkpoint /home/<your location>/segment-anything/checkpoints/sam_vit_h_4b8939.pth \
   --model-type vit_h \
   --input /home/<your location>/segment-anything/assets/alien.jpg \
-  --output /home/s<your location>/segment-anything/output
+  --output /home/<your location>/segment-anything/output
 ```
 
 **One real failure**
