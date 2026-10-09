@@ -4,10 +4,10 @@ Peer Repo: https://github.com/0palii/MLMPworkshop/blob/main/workshop02_AI_Projec
 
 Reproduction result: PASS
 
-If FAIL:
+If FAIL:N/A
 
-Failed step:
+Failed step:User location keep causing errors.
 
-Missing information:
+Missing information:Forgot to mention that other students need to set up a directory named checkpoints/checkpoint.
 
-Suggested fix:
+Suggested fix: Remember to remind other students to replace their own location of the files and models.
