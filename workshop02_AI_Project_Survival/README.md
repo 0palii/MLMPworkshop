@@ -29,6 +29,7 @@ mkdir -p checkpoints
 wget <URL of the model, eg:sam_vit_h_4b8939.pth>
 # ensure <your input> exists and is readable
 mkdir -p output
+# this will be where you put your output
 ```
 
 **Inference** 
