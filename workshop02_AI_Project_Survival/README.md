@@ -26,16 +26,14 @@ uv pip install opencv-python pycocotools matplotlib onnxruntime onnx jupyter
 uv pip install -e .
 mkdir -p checkpoints
 # place <your model>.pth in checkpoints/
+wget <URL of the model, eg:sam_vit_h_4b8939.pth>
 # ensure <your input> exists and is readable
+mkdir -p output
 ```
 
 **Inference** 
 ```text
-python scripts/amg.py \
-  --checkpoint /home/<your location>/segment-anything/checkpoints/sam_vit_h_4b8939.pth \
-  --model-type vit_h \
-  --input /home/<your location>/segment-anything/assets/alien.jpg \
-  --output /home/<your location>/segment-anything/output
+python scripts/amg.py --checkpoint /home/<your location>/segment-anything/checkpoints/sam_vit_h_4b8939.pth --model-type vit_h --input /home/<your location>/segment-anything/assets/<your input> --output /home/<your location>/segment-anything/output
 ```
 
 **One real failure**
